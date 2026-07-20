@@ -1,0 +1,32 @@
+generated: '2026-07-18'
+method: searched
+source: openapi/curie-openapi.json
+docs: https://chat.curie.app/llms.txt
+notes: >-
+  Tiered access model (per published llms.txt + .well-known/mcp.json). Free
+  public tier requires NO auth for discovery and most MCP tool calls / REST
+  catalog reads (matches Shopify Storefront MCP behaviour), rate-limited to
+  100 req/min per IP. A Pro Bearer token (OAuth 2.0 authorization-code, issued
+  out-of-band) is required only for premium tools such as initiate_checkout and
+  private-merchant-data reads, rate-limited to 1000 req/min per subscriber.
+  Wishlist / aggregate-cart tools resolve identity from an Authorization Bearer
+  JWT or an X-Curie-Device header.
+summary:
+  types:
+  - none
+  - http-bearer
+  - oauth2
+  api_key_in: []
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://chat.curie.app/api/oauth/authorize
+    tokenUrl: https://chat.curie.app/api/oauth/token
+    scopes: 1
+  description: OAuth 2.0 authorization code flow. Requires Curie Pro subscription.
+  sources:
+  - openapi/curie-openapi.json
