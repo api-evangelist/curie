@@ -1,25 +1,121 @@
 aid: curie
 name: Curie
-description: Curie is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Curie (Curie Vision, Inc.) is the commerce layer for AI — it connects AI
+  assistants like ChatGPT, Claude, and Gemini to real product catalogs from
+  5.6M+ Shopify stores via the Model Context Protocol (MCP). Results carry live
+  prices, real inventory, affiliate purchase links, and interactive 3D digital
+  twins (GLB/USDZ) that shoppers can rotate and view in AR. Curie publishes a
+  public REST catalog API, a hosted MCP server exposing 30 commerce tools, and
+  cross-protocol discovery profiles (MCP, UCP, A2A, OpenAI Apps SDK). Most
+  discovery and tool calls run on a free public tier with no auth; a Pro Bearer
+  is required only for premium tools such as checkout. Backed by 500 Global.
 url: https://raw.githubusercontent.com/api-evangelist/curie/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://cdn.prod.website-files.com/631a7e6c04b8fc3228d60317/631a7e6c04b8fc759ad60333_App%20Icon%20Main%20-%2032x32.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: live-api-and-mcp
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Commerce
+- E-Commerce
+- Shopify
+- Artificial Intelligence
+- Model Context Protocol
+- Agentic Commerce
+- Product Discovery
+- 3D
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: curie:curie-catalog-api
+  name: Curie Catalog API
+  description: The Catalog API from Curie — 1 operation(s) for catalog.
+  humanURL: https://chat.curie.app
+  baseURL: https://chat.curie.app
+  tags:
+  - Catalog
+  properties:
+  - type: OpenAPI
+    url: openapi/curie-catalog-api-openapi.yml
+  - type: APIReference
+    url: openapi/curie-openapi.json
+- aid: curie:curie-products-api
+  name: Curie Products API
+  description: The Products API from Curie — 6 operation(s) for products.
+  humanURL: https://chat.curie.app
+  baseURL: https://chat.curie.app
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/curie-products-api-openapi.yml
+  - type: APIReference
+    url: openapi/curie-openapi.json
 common:
 - type: Website
   url: https://curie.co
+- type: DeveloperPortal
+  url: https://chat.curie.app
+- type: Documentation
+  url: https://chat.curie.app/llms.txt
+- type: Pricing
+  url: https://chat.curie.app/pricing
+- type: TermsOfService
+  url: https://chat.curie.app/terms
+- type: PrivacyPolicy
+  url: https://chat.curie.app/privacy
+- type: MCPServer
+  url: mcp/curie-mcp.yml
+- type: LLMsTxt
+  url: llms/curie-llms.txt
+- type: WellKnown
+  url: well-known/curie-well-known.yml
+- type: Authentication
+  url: authentication/curie-authentication.yml
+- type: OAuthScopes
+  url: scopes/curie-scopes.yml
+- type: DomainSecurity
+  url: security/curie-domain-security.yml
+- type: ErrorCatalog
+  url: errors/curie-problem-types.yml
+- type: Conventions
+  url: conventions/curie-conventions.yml
+- type: DataModel
+  url: data-model/curie-data-model.yml
+- type: Conformance
+  url: conformance/curie-conformance.yml
+- type: Lifecycle
+  url: lifecycle/curie-lifecycle.yml
+- type: Overlay
+  url: overlays/curie-overlay.yaml
+- type: Components
+  url: components/curie-components.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

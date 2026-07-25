@@ -1,0 +1,64 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/curie-openapi.json
+notes: >-
+  The published REST OpenAPI declares a single core entity (Product). The MCP
+  surface adds cart / checkout / order / wishlist entities that are Shopify
+  passthroughs (UCP-canonical dev.ucp.shopping.*) and are not schematized in the
+  REST spec, so they are listed as related entities without derived fields.
+entities:
+  - name: Product
+    id_field: id
+    id_format: UUID
+    source: openapi/curie-openapi.json#/components/schemas/Product
+    fields:
+      - id
+      - title
+      - productName
+      - brand
+      - displayPrice
+      - productCategory
+      - gender
+      - sku
+      - genAiDescription
+      - imageUrl
+      - hasProductionGradeModel
+      - reconstructionModelGlb
+      - reconstructionModelUsdz
+      - reconstructionUrl
+  - name: Cart
+    source: MCP (Shopify passthrough, UCP dev.ucp.shopping.cart)
+    derived_fields: false
+  - name: Checkout
+    source: MCP (Shopify passthrough, UCP dev.ucp.shopping.checkout)
+    derived_fields: false
+  - name: Order
+    source: MCP (Shopify passthrough, UCP dev.ucp.shopping.order)
+    derived_fields: false
+  - name: Wishlist
+    source: MCP (curie_wishlist_* tools)
+    derived_fields: false
+  - name: AggregateCart
+    source: MCP (curie_cart_aggregate_* tools; multi-merchant, grouped by shop_domain)
+    derived_fields: false
+relationships:
+  - from: Product
+    to: Product
+    type: has_many
+    via: getRelatedProducts (recommendations)
+  - from: Cart
+    to: Product
+    type: has_many
+    via: line_items (product_variant_id)
+  - from: Checkout
+    to: Cart
+    type: belongs_to
+    via: cart_id
+  - from: Order
+    to: Checkout
+    type: belongs_to
+    via: checkout
+  - from: AggregateCart
+    to: Product
+    type: has_many
+    via: line (shop_domain + product_variant_id)

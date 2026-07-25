@@ -1,0 +1,39 @@
+generated: '2026-07-18'
+method: searched
+host: https://chat.curie.app
+notes: >-
+  The apex/marketing host (https://curie.co) returns HTTP 200 for every
+  /.well-known/* path but serves the landing-page HTML (a catch-all SPA), so
+  those are NOT real discovery documents and are excluded. The real discovery
+  surface lives on the product host, https://chat.curie.app.
+documents:
+  - path: /.well-known/mcp.json
+    status: 200
+    file: curie-mcp.json
+    description: MCP server discovery (schema_version v1.1, 30 tools)
+  - path: /.well-known/commerce.json
+    status: 200
+    file: curie-commerce.json
+    description: Curie-proposed unified commerce profile (0.1-draft-2026-05)
+  - path: /.well-known/ucp.json
+    status: 200
+    file: curie-ucp.json
+    description: UCP (Shopify/Google/Walmart joint) agent profile
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: curie-ai-plugin.json
+    description: ChatGPT Apps SDK / OpenAI plugin manifest
+  - path: /.well-known/a2a.json
+    status: 200
+    file: curie-a2a.json
+    description: Google Agent-to-Agent (A2A) profile
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    description: RFC 8414 metadata endpoint present but returned an empty body at probe time
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+    description: RFC 9728 metadata endpoint present but returned an empty body at probe time
+  - path: /.well-known/security.txt
+    status: 404

@@ -1,0 +1,12 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/curie-openapi.json + mcp/curie-mcp.yml
+skills:
+  - file: curie-discover-products.md
+    name: Discover Curie products and 3D models
+    api: openapi/curie-openapi.json
+    operations: [searchProducts, searchProductsFull, getProduct, getRelatedProducts, getFeaturedProducts, getNewArrivals]
+  - file: curie-agentic-commerce.md
+    name: Shop and check out via the Curie MCP server
+    api: mcp/curie-mcp.yml
+    operations: [search_catalog, get_product_details, compare_products, create_cart, update_cart, get_cart, initiate_checkout, complete_checkout, get_order]

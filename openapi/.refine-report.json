@@ -1,0 +1,16 @@
+{
+  "provider": "curie",
+  "sources": [
+    "curie-catalog-api-openapi.yml",
+    "curie-products-api-openapi.yml"
+  ],
+  "outputs": [
+    "curie-catalog-api-openapi.yml",
+    "curie-products-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

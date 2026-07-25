@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: https://chat.curie.app/.well-known/mcp.json
+docs: https://chat.curie.app/llms.txt
+notes: >-
+  Curie ships embeddable, client-side surfaces distinct from any server SDK:
+  interactive 3D product viewers and an MCP-UI product gallery iframe rendered
+  on tool results.
+components:
+  - family: 3D Product Viewer
+    name: model-viewer embed
+    description: >-
+      GLB/USDZ 3D digital twins embeddable in any web page via the
+      <model-viewer> web component; viewable in AR on iOS/Android.
+    loader: '<model-viewer> (Web Components)'
+    formats: [GLB, USDZ]
+  - family: MCP-UI
+    name: product-gallery iframe (UIResource)
+    description: >-
+      Sandboxed iframe (Tailwind + model-viewer + brand-themed product gallery)
+      emitted on every product-bearing MCP tool result via _meta.ui.resourceUri;
+      compatible with Claude.ai MCP Apps and ChatGPT Apps SDK.
+    example_uri: https://chat.curie.app/api/mcp/global/ui/product-gallery?q={query}
+    frame_ancestors:
+      - self
+      - https://chat.curie.app
+      - https://*.myshopify.com
+      - https://admin.shopify.com
+  - family: Shareable Product Page
+    name: hosted product page
+    description: >-
+      Public shareable page per product with a 3D viewer, prices, affiliate
+      links, and SEO metadata.
+    url_pattern: https://chat.curie.app/p/{product-slug}

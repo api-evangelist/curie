@@ -1,0 +1,26 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Curie 3D Product Commerce API
+  version: 1.0.0
+extends: openapi/curie-openapi.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: '2026-07-18'
+      x-apievangelist-mcp: https://chat.curie.app/api/mcp/global
+      x-apievangelist-llms-txt: https://chat.curie.app/llms.txt
+      x-apievangelist-protocols:
+        - MCP
+        - UCP
+        - A2A
+        - OpenAI Apps SDK
+  - target: $.info
+    update:
+      x-apievangelist-tier-model: >-
+        Free public tier (no auth, 100 req/min/IP) for discovery + most tools;
+        Pro Bearer (OAuth 2.0) for premium tools (initiate_checkout) at 1000 req/min.
+  - target: $.paths['/api/products']
+    update:
+      x-apievangelist-pagination:
+        style: page-number
+        params: [page, pageSize]

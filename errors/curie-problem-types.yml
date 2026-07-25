@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/curie-openapi.json
+format: http-status
+notes: >-
+  Derived from the OpenAPI 4xx responses. Curie's REST spec does not declare an
+  application/problem+json (RFC 9457) envelope; error responses are plain HTTP
+  status codes with a JSON body on 404. Premium/auth failures surface as 401.
+problems:
+  - status: 401
+    title: Authentication required
+    detail: A Curie Pro subscription / Pro Bearer token is required for this operation.
+    source_operation: openapi/curie-openapi.json#searchCatalog
+  - status: 404
+    title: Product not found
+    content_type: application/json
+    source_operation: openapi/curie-openapi.json#getProduct
+  - status: 404
+    title: Source product not found
+    source_operation: openapi/curie-openapi.json#getRelatedProducts

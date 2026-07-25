@@ -1,0 +1,43 @@
+generated: '2026-07-18'
+method: searched
+source: https://chat.curie.app/.well-known/mcp.json
+docs: https://chat.curie.app/llms.txt
+notes: >-
+  Asserts cross-cutting protocol/standards conformance evidenced by the
+  published discovery documents and OpenAPI. These are interoperability
+  standards, not a published security-compliance program (no SOC 2 / ISO 27001
+  claims were found), so no `Compliance` pointer is emitted.
+standards:
+  - id: openapi-3.1
+    conforms: true
+    evidence: openapi/curie-openapi.json declares openapi 3.1.0
+  - id: mcp-2024-11-05
+    conforms: true
+    evidence: /.well-known/mcp.json advertises a streamable-http MCP server (JSON-RPC 2.0 over SSE)
+  - id: ucp-2026-04-08
+    conforms: true
+    evidence: /.well-known/ucp.json + UCP-canonical dev.ucp.shopping.* tool names
+  - id: a2a
+    conforms: true
+    evidence: /.well-known/a2a.json Agent-to-Agent profile (agent id co.curie/commerce)
+  - id: openai-plugin
+    conforms: true
+    evidence: /.well-known/ai-plugin.json ChatGPT Apps SDK manifest
+  - id: oauth2-authorization-code
+    conforms: true
+    evidence: openapi securitySchemes oauth2 authorizationCode flow
+  - id: rfc8414-oauth-metadata
+    conforms: true
+    evidence: /.well-known/oauth-authorization-server endpoint present
+  - id: rfc9728-protected-resource-metadata
+    conforms: true
+    evidence: /.well-known/oauth-protected-resource endpoint present
+  - id: json-rpc-2.0
+    conforms: true
+    evidence: MCP transport is JSON-RPC 2.0 over SSE
+  - id: schema-org-json-ld
+    conforms: true
+    evidence: MCP resource exposes Product Schema.org JSON-LD (application/ld+json)
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: REST errors use plain HTTP status, not application/problem+json

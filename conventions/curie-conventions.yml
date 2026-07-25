@@ -1,0 +1,47 @@
+generated: '2026-07-18'
+method: searched
+source: openapi/curie-openapi.json
+docs: https://chat.curie.app/llms.txt
+authentication:
+  style: tiered
+  summary: >-
+    Free public tier — no auth for discovery and most REST/MCP calls. Pro Bearer
+    (OAuth 2.0 authorization-code) required only for premium tools such as
+    initiate_checkout. See authentication/curie-authentication.yml.
+pagination:
+  style: page-number
+  params: [page, pageSize]
+  evidence: openapi GET /api/products supports page=1&pageSize=20
+rate_limiting:
+  public: 100 req/min per IP (unauthenticated callers)
+  pro: 1000 req/min per subscriber
+  signaling: not documented in spec
+idempotency:
+  key_header: false
+  notes: >-
+    No idempotency-key header/param is documented. Several MCP tools are
+    operation-level idempotent by design — cancel_cart and cancel_checkout are
+    documented as idempotent (re-cancelling is a no-op), and
+    curie_cart_aggregate_add uses UPSERT-increment semantics. There is no
+    general retry-safety idempotency contract for create/write operations.
+versioning:
+  scheme: major-version-in-spec
+  current: '2.0.0'
+  evidence: openapi info.version 2.0.0
+error_envelope:
+  format: http-status
+  problem_json: false
+  reference: errors/curie-problem-types.yml
+identity:
+  device_header: X-Curie-Device
+  notes: Wishlist and aggregate-cart tools resolve caller identity from an Authorization Bearer JWT or the X-Curie-Device header.
+protocols:
+  - MCP (Model Context Protocol) — streamable-http / JSON-RPC 2.0 over SSE
+  - UCP (Unified Commerce Protocol) — dev.ucp.shopping.* canonical tool names
+  - A2A (Google Agent-to-Agent)
+  - Schema.org JSON-LD product resources
+cross_reference:
+  authentication: authentication/curie-authentication.yml
+  scopes: scopes/curie-scopes.yml
+  errors: errors/curie-problem-types.yml
+  lifecycle: lifecycle/curie-lifecycle.yml

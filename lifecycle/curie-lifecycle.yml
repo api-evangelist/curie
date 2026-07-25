@@ -1,0 +1,22 @@
+generated: '2026-07-18'
+method: searched
+source: openapi/curie-openapi.json
+docs: https://chat.curie.app/llms.txt
+versioning:
+  scheme: major-version-in-spec
+  current: '2.0.0'
+  evidence: openapi info.version 2.0.0
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    No formal deprecation policy or RFC 8594 Sunset/Deprecation header support
+    is documented. The Cloudflare Worker endpoints
+    (curie-api.curievision.workers.dev) are labelled "legacy" in the OpenAPI
+    server list and llms.txt, superseded by the unified chat.curie.app catalog
+    endpoints, but no dated sunset is published.
+sla:
+  url: null
+status_page: null
+pricing: https://chat.curie.app/pricing
+deprecated_operations: []

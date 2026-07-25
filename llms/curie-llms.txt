@@ -1,0 +1,98 @@
+# Curie Vision — AI Shopping Platform
+
+> Curie is the commerce layer for AI. Search, compare, and buy products
+> from 5.6M+ Shopify stores with interactive 3D digital twins.
+
+## What Curie Does
+
+Curie connects AI assistants to real product catalogs via MCP (Model Context Protocol).
+Products include live prices, real inventory, affiliate purchase links, and interactive
+3D models that consumers can rotate and view in AR.
+
+## MCP Server
+
+Connect your AI to Curie's product catalog:
+
+- Endpoint: https://chat.curie.app/api/mcp/global
+- Protocol: JSON-RPC 2.0 over SSE (MCP spec 2024-11-05+)
+- Discovery: https://chat.curie.app/.well-known/mcp.json
+- Auth: **Free public tier — no auth required for discovery OR most tool
+  calls.** Matches Shopify Storefront MCP behaviour: AI agents can search
+  products, fetch product details, view 3D models, manage cart, and read
+  shop policies without pre-auth. Pro Bearer is only required for premium
+  tools (currently `initiate_checkout` — anything that spends real money
+  or returns private merchant data). Authenticate at
+  https://chat.curie.app/api/oauth/authorize or visit
+  https://chat.curie.app/pricing for Pro.
+- Public rate limit: 100 req/min per IP for unauth callers.
+- Pro rate limit: 1000 req/min per subscriber.
+
+### Per-store endpoints
+
+Every Shopify merchant on Curie also gets a scoped MCP server at:
+
+  https://chat.curie.app/api/mcp/{shop_id}
+
+These return that merchant's catalog and use the same auth tiers as the
+global endpoint.
+
+### Available Tools
+
+All tool schemas are public for discovery. Tool execution is also public
+EXCEPT for premium tools (Pro Bearer required) — `initiate_checkout` and
+future private-data reads.
+
+- **search_products** — Search across all stores by query, brand, category, price range
+- **get_product** — Get full product details including 3D model URLs, prices, descriptions
+- **get_recommendations** — Get similar/related products
+- **view_3d_model** — Get embeddable 3D viewer URL (GLB + USDZ)
+- **get_availability** — Check which retailers carry a product and at what price
+- **get_cart** / **update_cart** — Shopify-canonical cart ops (passthrough). add_items=[{product_variant_id, quantity}] to add.
+- **compare_products** — Side-by-side matrix of 2–6 products with cascade visuals per row
+- **get_brand_context** — Merchant brand palette, voice, and `system_prompt_block`
+- **initiate_checkout** — Wrap Shopify Checkout MCP for in-chat checkout completion
+
+## REST API
+
+Public, no-auth, free-tier endpoints AI agents can hit directly without MCP plumbing:
+
+- Catalog search (canonical, no auth): GET https://chat.curie.app/api/catalog/search?q={query}&limit={n}&brand={brand}&category={category}
+- Search (Worker, legacy): GET https://curie-api.curievision.workers.dev/api/products/search?q={query}
+- Product detail: GET https://curie-api.curievision.workers.dev/api/products/{id}
+- Browse: GET https://curie-api.curievision.workers.dev/api/products?page=1&pageSize=20
+- ChatGPT GPT Action OpenAPI: GET https://chat.curie.app/api/openai/openapi.json
+
+## Discovery Profiles
+
+Cross-protocol agents check these /.well-known/* files before crawling individual endpoints:
+
+- Unified commerce profile (Curie-proposed): GET https://chat.curie.app/.well-known/commerce.json
+- MCP discovery: GET https://chat.curie.app/.well-known/mcp.json
+- UCP agent profile (Shopify/Google/Walmart joint): GET https://chat.curie.app/.well-known/ucp.json
+- ChatGPT Apps SDK plugin: GET https://chat.curie.app/.well-known/ai-plugin.json
+- A2A (Google Agent-to-Agent) profile: GET https://chat.curie.app/.well-known/a2a.json
+- OAuth 2.1 auth server (RFC 8414): GET https://chat.curie.app/.well-known/oauth-authorization-server
+- OAuth protected resource (RFC 9728): GET https://chat.curie.app/.well-known/oauth-protected-resource
+
+## Product Categories
+
+Curie indexes products across all categories: sneakers, electronics, skincare,
+home goods, clothing, accessories, and more — from 5.6M+ Shopify stores worldwide.
+
+## 3D Digital Twins
+
+Many products include interactive 3D models (GLB/USDZ format) that can be:
+- Embedded in any web page via <model-viewer>
+- Viewed in AR on iOS/Android
+- Rotated and inspected from every angle
+
+## Shareable Product Pages
+
+Every product has a public shareable page at:
+https://chat.curie.app/p/{product-slug}
+
+These pages include 3D viewers, prices, affiliate links, and SEO metadata.
+
+---
+
+Built by Curie Vision, Inc. (https://curie.co)
