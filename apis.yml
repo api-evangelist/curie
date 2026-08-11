@@ -60,7 +60,7 @@ apis:
   - type: OpenAPI
     url: openapi/curie-catalog-api-openapi.yml
   - type: APIReference
-    url: openapi/curie-openapi.json
+    url: openapi/_original/curie-openapi.json
 - aid: curie:curie-products-api
   name: Curie Products API
   description: The Products API from Curie — 6 operation(s) for products.
@@ -72,7 +72,7 @@ apis:
   - type: OpenAPI
     url: openapi/curie-products-api-openapi.yml
   - type: APIReference
-    url: openapi/curie-openapi.json
+    url: openapi/_original/curie-openapi.json
 common:
 - type: Website
   url: https://curie.co
