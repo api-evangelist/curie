@@ -5,10 +5,9 @@ source: https://chat.curie.app/.well-known/mcp.json
 docs: https://chat.curie.app/llms.txt
 server:
   name: Curie Commerce
-  description: >-
-    AI commerce layer for Shopify — search, compare, view 3D models, and buy
-    products from 5.6M+ stores. Free public tier (matches Shopify Storefront
-    MCP behaviour); Pro Bearer required only for premium tools.
+  description: AI commerce layer for Shopify — search, compare, view 3D models, and buy products from
+    5.6M+ stores. Free public tier (matches Shopify Storefront MCP behaviour); Pro Bearer required only
+    for premium tools.
   transport: streamable-http
   protocol: JSON-RPC 2.0 over SSE (MCP spec 2024-11-05+)
   url: https://chat.curie.app/api/mcp/global
@@ -18,86 +17,94 @@ server:
   contact: hello@curie.co
 auth:
   type: none
-  notes: >-
-    No sign-in for discovery or most tool calls. Premium tools (initiate_checkout
-    and private-merchant-data reads) accept a Pro Bearer issued out-of-band via
-    OAuth 2.0 authorization-code at https://chat.curie.app/api/oauth/authorize.
+  notes: No sign-in for discovery or most tool calls. Premium tools (initiate_checkout and private-merchant-data
+    reads) accept a Pro Bearer issued out-of-band via OAuth 2.0 authorization-code at https://chat.curie.app/api/oauth/authorize.
   public_rate_limit: 100 req/min per IP
   pro_rate_limit: 1000 req/min per subscriber
 ui_resource:
   field: _meta.ui.resourceUri
-  description: >-
-    Sandboxed iframe (Tailwind + model-viewer + brand-themed product gallery)
-    emitted on every product-bearing tool result; compatible with Claude.ai MCP
-    Apps and ChatGPT Apps SDK.
+  description: Sandboxed iframe (Tailwind + model-viewer + brand-themed product gallery) emitted on every
+    product-bearing tool result; compatible with Claude.ai MCP Apps and ChatGPT Apps SDK.
 tools:
-  - name: search_catalog
-    description: Search the store catalog by name, brand, style, color, or keywords (UCP/Shopify-canonical catalog search).
-    source_operation: openapi/curie-openapi.json#searchCatalog
-  - name: lookup_catalog
-    description: Batch-retrieve full product objects by ID in one call (UCP-canonical batch lookup).
-  - name: get_product_details
-    description: Get full details for a specific product by ID (UCP/Shopify-Storefront-MCP-canonical product detail).
-    source_operation: openapi/curie-openapi.json#getProduct
-  - name: get_recommendations
-    description: Get product recommendations similar to a given product ("show me more like this").
-    source_operation: openapi/curie-openapi.json#getRelatedProducts
-  - name: get_availability
-    description: Check product availability and pricing across retailers; returns affiliate links with current prices.
-  - name: compare_products
-    description: Compare 2 to 6 products side-by-side; returns a comparison matrix with 3D model availability.
-  - name: solve_job
-    description: Editorial "best for the job" answer given a shopper's job-to-be-done.
-  - name: get_suggested_prompts
-    description: Onboarding suggestion chips for the chat surface.
-  - name: get_brand_context
-    description: Merchant brand palette, typography hints, voice/tone profile, and a system_prompt_block.
-  - name: curie_try_on_3d
-    description: Returns an MCP-UI UIResource for an inline 3D viewer when a USDZ/GLB model exists.
-  - name: add_product_from_photo
-    description: Generate a 3D model and add it to the merchant's Shopify store as MODEL_3D media.
-  - name: search_shop_policies_and_faqs
-    description: Get facts about a shop's policies (returns, shipping, refunds, exchanges) or product FAQs.
-  - name: get_cart
-    description: Read a shopper's current cart by id (passthrough to Shopify).
-  - name: create_cart
-    description: Create a new Shopify cart for the target shop (UCP-canonical dev.ucp.shopping.cart.create_cart).
-  - name: update_cart
-    description: Modify a Shopify cart — add/update/remove line items.
-  - name: cancel_cart
-    description: Cancel an existing Shopify cart (UCP-canonical; idempotent).
-  - name: get_checkout
-    description: Read a Shopify checkout session's current state by id.
-  - name: update_checkout
-    description: Update fields on a Shopify checkout session (UCP-canonical dev.ucp.shopping.checkout.update_checkout).
-  - name: complete_checkout
-    description: Finalize payment and place order for a Shopify checkout session.
-  - name: cancel_checkout
-    description: Cancel a Shopify checkout session (UCP-canonical; idempotent).
-  - name: initiate_checkout
-    description: Begin a GUEST checkout flow for one or more products (no sign-in). PREMIUM — Pro Bearer required.
-  - name: get_order
-    description: Read the live status of an order by id (UCP-canonical dev.ucp.shopping.order.get_order).
-  - name: curie_wishlist_add
-    description: Save a product to the caller's wishlist (identity from Bearer JWT or X-Curie-Device).
-  - name: curie_wishlist_get
-    description: List items on the caller's wishlist, newest-saved first.
-  - name: curie_wishlist_remove
-    description: Remove an item from the caller's wishlist by item_id.
-  - name: curie_wishlist_move_to_cart
-    description: Mark a wishlist item as moved-to-cart.
-  - name: curie_cart_aggregate_add
-    description: Add a line to the caller's aggregated multi-merchant cart with UPSERT-increment semantics.
-  - name: curie_cart_aggregate_get
-    description: List the caller's aggregated multi-merchant cart, grouped by shop_domain.
-  - name: curie_cart_aggregate_remove
-    description: Remove a single line from the aggregated cart by line_id.
-  - name: curie_cart_aggregate_update_quantity
-    description: Set the quantity on an aggregated cart line (quantity 0 deletes the line).
+- name: search_catalog
+  description: Search the store catalog by name, brand, style, color, or keywords (UCP/Shopify-canonical
+    catalog search).
+  source_operation: openapi/curie-openapi.json#searchCatalog
+- name: lookup_catalog
+  description: Batch-retrieve full product objects by ID in one call (UCP-canonical batch lookup).
+- name: get_product_details
+  description: Get full details for a specific product by ID (UCP/Shopify-Storefront-MCP-canonical product
+    detail).
+  source_operation: openapi/curie-openapi.json#getProduct
+- name: get_recommendations
+  description: Get product recommendations similar to a given product ("show me more like this").
+  source_operation: openapi/curie-openapi.json#getRelatedProducts
+- name: get_availability
+  description: Check product availability and pricing across retailers; returns affiliate links with current
+    prices.
+- name: compare_products
+  description: Compare 2 to 6 products side-by-side; returns a comparison matrix with 3D model availability.
+- name: solve_job
+  description: Editorial "best for the job" answer given a shopper's job-to-be-done.
+- name: get_suggested_prompts
+  description: Onboarding suggestion chips for the chat surface.
+- name: get_brand_context
+  description: Merchant brand palette, typography hints, voice/tone profile, and a system_prompt_block.
+- name: curie_try_on_3d
+  description: Returns an MCP-UI UIResource for an inline 3D viewer when a USDZ/GLB model exists.
+- name: add_product_from_photo
+  description: Generate a 3D model and add it to the merchant's Shopify store as MODEL_3D media.
+- name: search_shop_policies_and_faqs
+  description: Get facts about a shop's policies (returns, shipping, refunds, exchanges) or product FAQs.
+- name: get_cart
+  description: Read a shopper's current cart by id (passthrough to Shopify).
+- name: create_cart
+  description: Create a new Shopify cart for the target shop (UCP-canonical dev.ucp.shopping.cart.create_cart).
+- name: update_cart
+  description: Modify a Shopify cart — add/update/remove line items.
+- name: cancel_cart
+  description: Cancel an existing Shopify cart (UCP-canonical; idempotent).
+- name: get_checkout
+  description: Read a Shopify checkout session's current state by id.
+- name: update_checkout
+  description: Update fields on a Shopify checkout session (UCP-canonical dev.ucp.shopping.checkout.update_checkout).
+- name: complete_checkout
+  description: Finalize payment and place order for a Shopify checkout session.
+- name: cancel_checkout
+  description: Cancel a Shopify checkout session (UCP-canonical; idempotent).
+- name: initiate_checkout
+  description: Begin a GUEST checkout flow for one or more products (no sign-in). PREMIUM — Pro Bearer
+    required.
+- name: get_order
+  description: Read the live status of an order by id (UCP-canonical dev.ucp.shopping.order.get_order).
+- name: curie_wishlist_add
+  description: Save a product to the caller's wishlist (identity from Bearer JWT or X-Curie-Device).
+- name: curie_wishlist_get
+  description: List items on the caller's wishlist, newest-saved first.
+- name: curie_wishlist_remove
+  description: Remove an item from the caller's wishlist by item_id.
+- name: curie_wishlist_move_to_cart
+  description: Mark a wishlist item as moved-to-cart.
+- name: curie_cart_aggregate_add
+  description: Add a line to the caller's aggregated multi-merchant cart with UPSERT-increment semantics.
+- name: curie_cart_aggregate_get
+  description: List the caller's aggregated multi-merchant cart, grouped by shop_domain.
+- name: curie_cart_aggregate_remove
+  description: Remove a single line from the aggregated cart by line_id.
+- name: curie_cart_aggregate_update_quantity
+  description: Set the quantity on an aggregated cart line (quantity 0 deletes the line).
 resources:
-  - uri_pattern: https://chat.curie.app/api/mcp/{shop_domain}/llms.txt
-    name: llms.txt
-    mime: text/plain
-  - uri_pattern: https://chat.curie.app/api/mcp/{shop_domain}/schema
-    name: Product Schema.org JSON-LD
-    mime: application/ld+json
+- uri_pattern: https://chat.curie.app/api/mcp/{shop_domain}/llms.txt
+  name: llms.txt
+  mime: text/plain
+- uri_pattern: https://chat.curie.app/api/mcp/{shop_domain}/schema
+  name: Product Schema.org JSON-LD
+  mime: application/ld+json
+deployment:
+  mode: remote
+  endpoint: https://chat.curie.app/api/mcp/global
+  verified: probed
+  probe: live
+  tools: 30
+  checked: '2026-08-12'
+  source: catalog MCP census

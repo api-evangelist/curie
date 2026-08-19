@@ -1,0 +1,89 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Curie 3D Product Commerce Catalog API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://chat.curie.app/api/oauth/authorize",
+      "accessTokenUrl": "https://chat.curie.app/api/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Catalog",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search the unified product catalog across all stores",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chat.curie.app/api/catalog/search",
+            "params": [
+              {
+                "name": "q",
+                "value": "wireless noise-canceling headphones",
+                "type": "query",
+                "description": "Search query. Supports natural language like 'ergonomic office chair' or 'vintage leather bag'"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of results to return"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for pagination"
+              },
+              {
+                "name": "brand",
+                "value": "Sony",
+                "type": "query",
+                "description": "Filter by brand name"
+              },
+              {
+                "name": "category",
+                "value": "Electronics",
+                "type": "query",
+                "description": "Filter by product category"
+              },
+              {
+                "name": "has3dModel",
+                "value": "",
+                "type": "query",
+                "description": "When true, only return products with interactive 3D models"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://chat.curie.app/api/oauth/authorize",
+              "accessTokenUrl": "https://chat.curie.app/api/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Search products across all connected Shopify stores. Supports natural language queries, brand filtering, category filtering, and pagination. Returns products with images, prices, 3D model availability, and store information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

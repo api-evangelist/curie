@@ -1,0 +1,774 @@
+{
+  "item": [
+    {
+      "id": "fb7ea72c-099a-4484-8087-9adf74811366",
+      "name": "Products",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "62915d0b-3c73-490a-82cf-cf535676efc9",
+          "name": "Search products by name, brand, or category",
+          "request": {
+            "name": "Search products by name, brand, or category",
+            "description": {
+              "content": "List and filter products from the catalog. Supports text search, brand filtering, pagination, and filtering by 3D model availability. Returns product metadata including images, prices, and 3D model URLs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Search query to match against product name, brand, description, or SKU"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Maximum number of products to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "20",
+                  "description": "Number of products per page"
+                },
+                {
+                  "disabled": false,
+                  "key": "brand",
+                  "value": "<string>",
+                  "description": "Filter by brand name"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "Filter by product category"
+                },
+                {
+                  "disabled": false,
+                  "key": "hasProductionGradeModel",
+                  "value": "<boolean>",
+                  "description": "When true, only return products that have high-quality 3D models available for viewing"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d132b74-3e1a-404b-8d14-792160599054",
+              "name": "List of products matching the query",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "wireless headphones"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "pageSize",
+                      "value": "20"
+                    },
+                    {
+                      "key": "brand",
+                      "value": "Sony"
+                    },
+                    {
+                      "key": "category",
+                      "value": "Electronics"
+                    },
+                    {
+                      "key": "hasProductionGradeModel",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"productName\": \"string\",\n      \"brand\": \"string\",\n      \"displayPrice\": \"string\",\n      \"productCategory\": \"string\",\n      \"gender\": \"string\",\n      \"sku\": \"string\",\n      \"genAiDescription\": \"string\",\n      \"imageUrl\": \"https://MGm.skuxeWUCaZtg78SlRP-oCCfj,2U6HGqzLVG8YZSyPAXmjMYNKf8wyIGhh6aWoXH-cg1o6ssTI\",\n      \"hasProductionGradeModel\": false,\n      \"reconstructionModelGlb\": \"https://uFBLaVzibArxgWF.nrhSQYIVUJW.2HXFQ-VfLOvf-+KmY\",\n      \"reconstructionModelUsdz\": \"https://MKTmrseGlgXvGgXCYkezvV.mkJVRjnZ,2VtginzKZvp\",\n      \"reconstructionUrl\": \"https://zQUhilxofFJzigLJyznYEXqIQZLukTS.eszM0BRk+9eRjMOH+DPjOW-VG\",\n      \"reconstructionUrlUsdz\": \"http://vOjuFugPiNsSxkooaKfyvdBWqFJ.ydK.x1g4t,lPAMk5HeVvvwTQU6H8TppEzAuWMYrRR9EjFXF4pWcGxnizvAg0tvDlTfV0q\",\n      \"premierVendor\": {\n        \"shop_name\": \"string\",\n        \"link\": \"http://QlzjfjGOAYQNzckXpqHyysJ.ycswRogsdPqQ2DYiXhTw-+ZcFlPOQJR8Ey.+Wx,e5ObMPGjUr8h7D0FJkcAfO1KE1LkXYEgXJ,\",\n        \"price\": \"string\"\n      },\n      \"affiliateLinks\": [\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"https://UHaUglEydOQnjgOqQbJeqctZVykOd.tdhgpi1koUl0JRktkPijXhZ7ea3v-2,HPJOm,UmjjHg9TaLTY.sfvGpn4QAaqKZz.XbiMVT81Ils\",\n          \"price\": \"string\"\n        },\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"https://sSHxPHYBeMfBVIWTIkycsIyLDjnjOeF.tvivVx6uVecDJr4fbAXTL\",\n          \"price\": \"string\"\n        }\n      ],\n      \"storeName\": \"string\",\n      \"storeId\": \"string\",\n      \"createdAt\": \"1989-11-08T13:14:46.893Z\",\n      \"updatedAt\": \"1962-11-07T08:04:01.134Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"productName\": \"string\",\n      \"brand\": \"string\",\n      \"displayPrice\": \"string\",\n      \"productCategory\": \"string\",\n      \"gender\": \"string\",\n      \"sku\": \"string\",\n      \"genAiDescription\": \"string\",\n      \"imageUrl\": \"https://JWUbrhPUYQTvkHjSruTOWGtA.piyVNQVieDHtpNE7pKbIS-2OO+xOvlbFOxJygG.S9CV7ACgIOG84U.,MWL077If3-ka\",\n      \"hasProductionGradeModel\": true,\n      \"reconstructionModelGlb\": \"https://DhwotFCKVNBkxFfiercBWPmTMPnuicRs.dvnfPZS+XcftOgJoaEhKsrbFnFntRmarH3k.NgRMI8\",\n      \"reconstructionModelUsdz\": \"http://LI.tcoK5Ybm70dtCmaRXBgsy29zRHdI\",\n      \"reconstructionUrl\": \"http://RvEMssFtWXPDZJbGrOvbwVNRCxWLXk.pwrcp8pE.IXeB4fmkAuxz3+IcSvy8VaWe4Y9+vcwZb1ZuyMYVNFoCADrja3SOe\",\n      \"reconstructionUrlUsdz\": \"http://ZXnzouYPEkIeko.fwzWmO38tcN\",\n      \"premierVendor\": {\n        \"shop_name\": \"string\",\n        \"link\": \"https://IZzpfWFSFXJXtiXNAdVVjd.nemjcxBt\",\n        \"price\": \"string\"\n      },\n      \"affiliateLinks\": [\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://STzGfsMi.hlnJqDMqAlN5eXKGX77djLMPfgnAcF-vHfJxDSY1b1kZFCYMrhwNrGj\",\n          \"price\": \"string\"\n        },\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://SNxQqVoMDOZwXgcOPZjrR.tpiPQvlqJi-R\",\n          \"price\": \"string\"\n        }\n      ],\n      \"storeName\": \"string\",\n      \"storeId\": \"string\",\n      \"createdAt\": \"1972-12-31T02:40:28.449Z\",\n      \"updatedAt\": \"2004-05-31T14:02:15.678Z\"\n    }\n  ],\n  \"total\": 2320,\n  \"page\": 2569,\n  \"pageSize\": 6679,\n  \"hasMore\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57e3b49a-6b93-47bd-883c-cf2c67a4dcc9",
+          "name": "Get detailed product info including 3D model URLs",
+          "request": {
+            "name": "Get detailed product info including 3D model URLs",
+            "description": {
+              "content": "Retrieve full details for a single product by ID. Includes all metadata, images, 3D model URLs (GLB and USDZ), pricing, and vendor links.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "products",
+                ":productId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "productId",
+                  "description": "(Required) Unique product identifier (UUID)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a9fa413c-c8ca-4f7f-88b2-4f6b4166982a",
+              "name": "Full product details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "productId",
+                      "description": "(Required) Unique product identifier (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"title\": \"string\",\n  \"productName\": \"string\",\n  \"brand\": \"string\",\n  \"displayPrice\": \"string\",\n  \"productCategory\": \"string\",\n  \"gender\": \"string\",\n  \"sku\": \"string\",\n  \"genAiDescription\": \"string\",\n  \"imageUrl\": \"http://ZdqikDsp.xfiuya3S2IHZVULCSmRpDud5.WTHHjoRCBGvojhFckkegPZ9\",\n  \"hasProductionGradeModel\": true,\n  \"reconstructionModelGlb\": \"http://KFzrXf.wasyTBjeMyCZPCj9jL24\",\n  \"reconstructionModelUsdz\": \"https://uDKhqkeYQHwjQemQybQ.njhXOd6XzbmeNGqpdNX++wtK8.AKuQG\",\n  \"reconstructionUrl\": \"http://BrwOKVEjocJz.wtjrQyHL-SAlX\",\n  \"reconstructionUrlUsdz\": \"https://kGCUDlpcXR.gwrmA\",\n  \"premierVendor\": {\n    \"shop_name\": \"string\",\n    \"link\": \"http://IKWqVcxImeXNkxNbfiPPJZiqpYHiuWZ.axtRwKDwA2PTawmmSNnNRana+DByX19ubzahgKFBGyQg,K8WoX-LqZfuBkqlkFhXD9ZVcjm\",\n    \"price\": \"string\"\n  },\n  \"affiliateLinks\": [\n    {\n      \"shop_name\": \"string\",\n      \"url\": \"http://UzZYHwaFO.zdscK\",\n      \"price\": \"string\"\n    },\n    {\n      \"shop_name\": \"string\",\n      \"url\": \"https://laQWaXdjkNdvgngIoLRtVX.jqzasU9PJN3xV-F0,GeWJJCRruXEtQ2JEulfK4gqIVI9GzVkTldkKfF50\",\n      \"price\": \"string\"\n    }\n  ],\n  \"storeName\": \"string\",\n  \"storeId\": \"string\",\n  \"createdAt\": \"2019-06-04T18:48:16.425Z\",\n  \"updatedAt\": \"2004-08-28T21:56:06.181Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1bfb4af3-c31b-42c9-b550-71fb273daa17",
+              "name": "Product not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "productId",
+                      "description": "(Required) Unique product identifier (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"Product not found\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "16639c02-3bcb-4a47-aab9-961f63dfa4ef",
+          "name": "Full-text search with relevance scoring",
+          "request": {
+            "name": "Full-text search with relevance scoring",
+            "description": {
+              "content": "Perform a full-text search across all product fields with relevance-based ranking. More powerful than the basic /api/products query parameter. Use this for natural language product searches.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "products",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "(Required) Search query. Supports natural language like 'ergonomic standing desk under $500'"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "10",
+                  "description": "Number of results to return"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d7fa15e-6480-4127-b4d1-e6506b8256b2",
+              "name": "Search results ranked by relevance",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "products",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "wireless noise-canceling headphones"
+                    },
+                    {
+                      "key": "size",
+                      "value": "10"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"productName\": \"string\",\n      \"brand\": \"string\",\n      \"displayPrice\": \"string\",\n      \"productCategory\": \"string\",\n      \"gender\": \"string\",\n      \"sku\": \"string\",\n      \"genAiDescription\": \"string\",\n      \"imageUrl\": \"http://kzwhXRBFm.xjdqZue5bbl22h7ATzZwIs0HwKFl0mp44LInuXw1QZSjvsbcYDm,rInFxYuNfkzcv0nf,P,VLm\",\n      \"hasProductionGradeModel\": false,\n      \"reconstructionModelGlb\": \"http://JqZgBc.xipIe\",\n      \"reconstructionModelUsdz\": \"http://uWTZooscoeYctoBVXHgAJnRZ.qqplw6zi9bixSQ.i0B6OoImxv5eoJJW53rlmLtV-8OBvvTkurjaS+v4LdjXa5AiJaGUqt\",\n      \"reconstructionUrl\": \"http://YbWYQKhCwdPzBlnIbgx.oiXC-jVyVCjErW,jvUYOKKGurv1AYm9GP1ZZQ.XApcdikR7LA-Qg+Td\",\n      \"reconstructionUrlUsdz\": \"http://irtTpibmGOWhegrpPnTJeilDjGHANj.pkndE6MqrHTxTvPrXhMdkI.8NDd2lk,EfJaCbjttxmyAFzWkgybyn,+\",\n      \"premierVendor\": {\n        \"shop_name\": \"string\",\n        \"link\": \"https://ILhrgpA.djitGgyaGgLXzym4e7R6kliHzchBxFpdpgIlOniKi.gznzNWZIFcOrWQb6ZNe9\",\n        \"price\": \"string\"\n      },\n      \"affiliateLinks\": [\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://VjyLNgWahrdxNwZmmCmBkOKls.iiiB916bv.CjaaTf7xa41szGOiTUSJnp14Q\",\n          \"price\": \"string\"\n        },\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://YZDwBrfolRNRsjiGQeccaX.nprLGNpWsNGBY6m2JAg3NI0hPIe7Nds\",\n          \"price\": \"string\"\n        }\n      ],\n      \"storeName\": \"string\",\n      \"storeId\": \"string\",\n      \"createdAt\": \"1993-07-31T17:49:18.086Z\",\n      \"updatedAt\": \"2005-04-05T12:11:54.157Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"productName\": \"string\",\n      \"brand\": \"string\",\n      \"displayPrice\": \"string\",\n      \"productCategory\": \"string\",\n      \"gender\": \"string\",\n      \"sku\": \"string\",\n      \"genAiDescription\": \"string\",\n      \"imageUrl\": \"http://nRmZgHbzeRERVVfaJj.thkxtOt-dTAqeVtgdcbGQpwuMH-csNTbm0Aim6GT.P7AHSeaWeh0qtqDCb-G4j\",\n      \"hasProductionGradeModel\": false,\n      \"reconstructionModelGlb\": \"https://JiNeskhscXfkRUYxXUYYmMpUog.ieksHMlBo3gAs3ACs\",\n      \"reconstructionModelUsdz\": \"http://QbYCnmzzIkVdTknWwMDkrKuuFEvy.qfqrdE1SClNrHhXR1BaOETr9T,ApGzkAA9zvsqKoTrQeOSlI62hqpvy8Z4DjTqETrdI\",\n      \"reconstructionUrl\": \"http://qT.nqjaoGdTSliZ,ONNZqnmpO\",\n      \"reconstructionUrlUsdz\": \"https://cyINzrF.mhXmDqf8Yp1++amHBTZs+B75znkRVDKuJGIB\",\n      \"premierVendor\": {\n        \"shop_name\": \"string\",\n        \"link\": \"https://EmTQ.uzriUhOqm8loWb0O2YBUkkaUobbVwNO.OVEDvoj4\",\n        \"price\": \"string\"\n      },\n      \"affiliateLinks\": [\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://GQr.jnfn1nTkHklUMrv,QId-ZirX\",\n          \"price\": \"string\"\n        },\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://unq.nnR94sy7Cz2hU9mZSlZW6yEoQyIEdIrpW5oCqb4uQjY.hNjP.cqu7NSF0a.RNWKnrl.Gzvlj99-KF6QYKQmVZ\",\n          \"price\": \"string\"\n        }\n      ],\n      \"storeName\": \"string\",\n      \"storeId\": \"string\",\n      \"createdAt\": \"1953-07-12T16:57:46.026Z\",\n      \"updatedAt\": \"1951-07-04T21:39:14.854Z\"\n    }\n  ],\n  \"total\": 6219,\n  \"query\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d016bc39-dca2-4150-a064-3ce06a7096c5",
+          "name": "Get products related to a specific product",
+          "request": {
+            "name": "Get products related to a specific product",
+            "description": {
+              "content": "Find products similar or related to a given product. Uses brand, category, and attribute matching to suggest alternatives and complementary items.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "products",
+                ":productId",
+                "related"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "productId",
+                  "description": "(Required) Product ID to find related products for"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8854694f-bd49-4510-896e-0eba4362ad93",
+              "name": "List of related products",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "products",
+                    ":productId",
+                    "related"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "productId",
+                      "description": "(Required) Product ID to find related products for"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"productName\": \"string\",\n      \"brand\": \"string\",\n      \"displayPrice\": \"string\",\n      \"productCategory\": \"string\",\n      \"gender\": \"string\",\n      \"sku\": \"string\",\n      \"genAiDescription\": \"string\",\n      \"imageUrl\": \"http://UILVEdyvcTUdCqJSHYLr.ywre,48wrFd1tgO-Trm\",\n      \"hasProductionGradeModel\": true,\n      \"reconstructionModelGlb\": \"http://vjiVNTGNuVmKyzVUxNkGsWpuqDg.ftnKg3\",\n      \"reconstructionModelUsdz\": \"https://mpBmRyxDkFeheokgMqP.myipC1LFc4onT0oljJpb,OSxDXmXdkmaXx1mVqrSpAU\",\n      \"reconstructionUrl\": \"http://McrljjxwDmlcsDHGwLdtUGqaygoW.ptrs2xJyT37OxUh7UCBa6K\",\n      \"reconstructionUrlUsdz\": \"https://EcOwLaJcQxAlArVvfUtZavkFjGQ.eabmGSB-VhSbZro0SQvHyshoWe5KL2ik5R+fJAGa55IX-AkqK2GGvS\",\n      \"premierVendor\": {\n        \"shop_name\": \"string\",\n        \"link\": \"https://ApmNeErBenXmAENHcOExirQPw.idxIb,W5HPKhvFZnjdveP5JK0tpfWA6T\",\n        \"price\": \"string\"\n      },\n      \"affiliateLinks\": [\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://WoaqVsIhAxcitviMI.lsrr.odM3VNq,IwhD-kpXHbnroNChH7EyOtDNZHZO+\",\n          \"price\": \"string\"\n        },\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://NQNKHr.nmpLz,G5QT9-3V5jN+VQMUEq\",\n          \"price\": \"string\"\n        }\n      ],\n      \"storeName\": \"string\",\n      \"storeId\": \"string\",\n      \"createdAt\": \"2010-09-27T10:18:10.794Z\",\n      \"updatedAt\": \"2004-09-26T15:41:41.316Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"productName\": \"string\",\n      \"brand\": \"string\",\n      \"displayPrice\": \"string\",\n      \"productCategory\": \"string\",\n      \"gender\": \"string\",\n      \"sku\": \"string\",\n      \"genAiDescription\": \"string\",\n      \"imageUrl\": \"https://vzsTzwsA.cgnoZW0r\",\n      \"hasProductionGradeModel\": false,\n      \"reconstructionModelGlb\": \"https://YZhcbyBuednLKoLAuhsRHdsmMPjlFgWX.iroChK9Oydz882qHIRbID56Qaaqs9DAjyR2fCWG16vsS\",\n      \"reconstructionModelUsdz\": \"https://trQxwboujeWpDrUqHgk.mnlWyVtkb4bfuVmVLbnbuF5NQasd.l0-KDdhRF.qhCfdIc,MnePelSR14HU\",\n      \"reconstructionUrl\": \"http://XNLmYjGtWBxqgrWgZ.avzdh+XCCV0xqHOHKlYdco-d6My8p8a9-cEWEC\",\n      \"reconstructionUrlUsdz\": \"https://sOXfiwqCNVBRVBXzfHSl.ujaIcaBaoKR63OVBLFG\",\n      \"premierVendor\": {\n        \"shop_name\": \"string\",\n        \"link\": \"https://eJwxWZKnKewgptPhFIGwPrJeEbERcdz.rvaF2Xfe4n2Xv7taBc+OgiEWQ..8-900UgtYK-vyue5Km\",\n        \"price\": \"string\"\n      },\n      \"affiliateLinks\": [\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://HBJ.iiGn6xnvmNm0Ar6axq6YPgordn8k2c-7tYMSgf9mwJildJO7SvqbJ-fcxoKs99GBRF\",\n          \"price\": \"string\"\n        },\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://vfPVRxVTvMkUBJBMJewTeBXlhB.aoou6qKyMcHYw-RjApWrE+pjhV,I,obftgwe0wTGaj\",\n          \"price\": \"string\"\n        }\n      ],\n      \"storeName\": \"string\",\n      \"storeId\": \"string\",\n      \"createdAt\": \"1973-07-07T04:28:16.796Z\",\n      \"updatedAt\": \"2018-09-21T15:25:01.366Z\"\n    }\n  ],\n  \"sourceProductId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "95135840-6a90-40e4-a3ad-68b8fcb9e365",
+              "name": "Source product not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "products",
+                    ":productId",
+                    "related"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "productId",
+                      "description": "(Required) Product ID to find related products for"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f8801b9-3693-4bb5-a497-b132df0784d0",
+          "name": "Get featured products with 3D models",
+          "request": {
+            "name": "Get featured products with 3D models",
+            "description": {
+              "content": "Retrieve a curated list of featured products that have high-quality 3D models and are popular or noteworthy.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "products",
+                "featured"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f9223f2e-6a6c-40c6-916c-0fbdbe9a46d6",
+              "name": "List of featured products",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "products",
+                    "featured"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"productName\": \"string\",\n      \"brand\": \"string\",\n      \"displayPrice\": \"string\",\n      \"productCategory\": \"string\",\n      \"gender\": \"string\",\n      \"sku\": \"string\",\n      \"genAiDescription\": \"string\",\n      \"imageUrl\": \"https://kLTNTvxiSCfEAcBSNYMCHYSlToUkeuvvL.ucudy9p6JHAgWUIpTKnN6+xNc+SYjtDvP,Z9tND0C,\",\n      \"hasProductionGradeModel\": false,\n      \"reconstructionModelGlb\": \"http://HogxjalJAVDhUfvsfdmCueuWOwdicbtT.yneuK3qr211yB2MaZzLkRAHQZc8fZTH4uGVaJraXxGSKEZOO4NEc.0zMtNfX-mS2.A-hi0u\",\n      \"reconstructionModelUsdz\": \"http://NnGtuOPQQXPYJEvV.npymKs-TBH\",\n      \"reconstructionUrl\": \"http://KUgtI.whzaR9AZP-N1,1YfKHPi9qucnb2jXPoYMLEj50UxbtRv\",\n      \"reconstructionUrlUsdz\": \"https://ieQFs.idqkocDq9V260i5As0BSM5keELCiweaMUfDMIgHnu-z8UJ7TMqRw8lXIWs50dChZvaRLcJevgm,xrjFZPD\",\n      \"premierVendor\": {\n        \"shop_name\": \"string\",\n        \"link\": \"https://XnyvlZPGhJjvMKhoApLGPNbEC.hvFQNEli8WoCO3Z,b2zyLav,na.z4P.xQodY8z7m\",\n        \"price\": \"string\"\n      },\n      \"affiliateLinks\": [\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"https://KrvG.yrwvqFqk,KU\",\n          \"price\": \"string\"\n        },\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://dxcPu.wvykzoVrMsszNDnm.DOOKAETi75EBe,OmcNehBCPVY-e02xW3ZCnWAlDnSsALlphSSx04\",\n          \"price\": \"string\"\n        }\n      ],\n      \"storeName\": \"string\",\n      \"storeId\": \"string\",\n      \"createdAt\": \"2021-07-14T08:21:27.740Z\",\n      \"updatedAt\": \"1995-03-30T19:29:36.586Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"productName\": \"string\",\n      \"brand\": \"string\",\n      \"displayPrice\": \"string\",\n      \"productCategory\": \"string\",\n      \"gender\": \"string\",\n      \"sku\": \"string\",\n      \"genAiDescription\": \"string\",\n      \"imageUrl\": \"https://wmftW.fxsTNoumpU3c69aBGz,06FiHDcmIIzUC4SSaHVHT-R,MIhxo8nAB\",\n      \"hasProductionGradeModel\": false,\n      \"reconstructionModelGlb\": \"http://cgrflnizhbQHEgRFlSGXUG.spyC,lmNxhWQScD4zexCYBZQ771gK,K8GrgQNbwN0oObpe8WGPckS5gUN\",\n      \"reconstructionModelUsdz\": \"https://EzZbxjpTWwXenAxPVfs.cmpu9+JGKa0YVIhjFXR5yqcZMmcSd0+snBn+EVfwU5mRJamaxzC8NH7B\",\n      \"reconstructionUrl\": \"https://llaEUUDkU.ztjzC5UCiEdf58HrOMpP4NxJAbvzs6SOqPKwEaZ4iOj,3mGopHta6S\",\n      \"reconstructionUrlUsdz\": \"https://m.vgfhtzgTKMzlDQssaLi68g9q1Z61csiygBVHgDAu\",\n      \"premierVendor\": {\n        \"shop_name\": \"string\",\n        \"link\": \"http://rofMwfIIYZLmWB.zmcaA-0CXegjAl1l\",\n        \"price\": \"string\"\n      },\n      \"affiliateLinks\": [\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"https://szuJj.vhierBUpOVQ8X,Wn9tNZuPnt47zqk68,v-et\",\n          \"price\": \"string\"\n        },\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://fFJeDIPiNhlfDYZtZqUvhUUzhQUWAtof.xtbySuHT,qgGn0B.,JP\",\n          \"price\": \"string\"\n        }\n      ],\n      \"storeName\": \"string\",\n      \"storeId\": \"string\",\n      \"createdAt\": \"1983-12-31T10:26:50.892Z\",\n      \"updatedAt\": \"1964-01-19T19:51:56.984Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b58fe74-ac68-46d3-bc75-81add7aa1ae4",
+          "name": "Get newest products added to the catalog",
+          "request": {
+            "name": "Get newest products added to the catalog",
+            "description": {
+              "content": "Retrieve the most recently added products, sorted by creation date (newest first).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "products",
+                "new-arrivals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aaad01a9-f590-4ab4-a7d6-0bfa4dfa4306",
+              "name": "List of newest products",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "products",
+                    "new-arrivals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"productName\": \"string\",\n      \"brand\": \"string\",\n      \"displayPrice\": \"string\",\n      \"productCategory\": \"string\",\n      \"gender\": \"string\",\n      \"sku\": \"string\",\n      \"genAiDescription\": \"string\",\n      \"imageUrl\": \"https://kLTNTvxiSCfEAcBSNYMCHYSlToUkeuvvL.ucudy9p6JHAgWUIpTKnN6+xNc+SYjtDvP,Z9tND0C,\",\n      \"hasProductionGradeModel\": false,\n      \"reconstructionModelGlb\": \"http://HogxjalJAVDhUfvsfdmCueuWOwdicbtT.yneuK3qr211yB2MaZzLkRAHQZc8fZTH4uGVaJraXxGSKEZOO4NEc.0zMtNfX-mS2.A-hi0u\",\n      \"reconstructionModelUsdz\": \"http://NnGtuOPQQXPYJEvV.npymKs-TBH\",\n      \"reconstructionUrl\": \"http://KUgtI.whzaR9AZP-N1,1YfKHPi9qucnb2jXPoYMLEj50UxbtRv\",\n      \"reconstructionUrlUsdz\": \"https://ieQFs.idqkocDq9V260i5As0BSM5keELCiweaMUfDMIgHnu-z8UJ7TMqRw8lXIWs50dChZvaRLcJevgm,xrjFZPD\",\n      \"premierVendor\": {\n        \"shop_name\": \"string\",\n        \"link\": \"https://XnyvlZPGhJjvMKhoApLGPNbEC.hvFQNEli8WoCO3Z,b2zyLav,na.z4P.xQodY8z7m\",\n        \"price\": \"string\"\n      },\n      \"affiliateLinks\": [\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"https://KrvG.yrwvqFqk,KU\",\n          \"price\": \"string\"\n        },\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://dxcPu.wvykzoVrMsszNDnm.DOOKAETi75EBe,OmcNehBCPVY-e02xW3ZCnWAlDnSsALlphSSx04\",\n          \"price\": \"string\"\n        }\n      ],\n      \"storeName\": \"string\",\n      \"storeId\": \"string\",\n      \"createdAt\": \"2021-07-14T08:21:27.740Z\",\n      \"updatedAt\": \"1995-03-30T19:29:36.586Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"productName\": \"string\",\n      \"brand\": \"string\",\n      \"displayPrice\": \"string\",\n      \"productCategory\": \"string\",\n      \"gender\": \"string\",\n      \"sku\": \"string\",\n      \"genAiDescription\": \"string\",\n      \"imageUrl\": \"https://wmftW.fxsTNoumpU3c69aBGz,06FiHDcmIIzUC4SSaHVHT-R,MIhxo8nAB\",\n      \"hasProductionGradeModel\": false,\n      \"reconstructionModelGlb\": \"http://cgrflnizhbQHEgRFlSGXUG.spyC,lmNxhWQScD4zexCYBZQ771gK,K8GrgQNbwN0oObpe8WGPckS5gUN\",\n      \"reconstructionModelUsdz\": \"https://EzZbxjpTWwXenAxPVfs.cmpu9+JGKa0YVIhjFXR5yqcZMmcSd0+snBn+EVfwU5mRJamaxzC8NH7B\",\n      \"reconstructionUrl\": \"https://llaEUUDkU.ztjzC5UCiEdf58HrOMpP4NxJAbvzs6SOqPKwEaZ4iOj,3mGopHta6S\",\n      \"reconstructionUrlUsdz\": \"https://m.vgfhtzgTKMzlDQssaLi68g9q1Z61csiygBVHgDAu\",\n      \"premierVendor\": {\n        \"shop_name\": \"string\",\n        \"link\": \"http://rofMwfIIYZLmWB.zmcaA-0CXegjAl1l\",\n        \"price\": \"string\"\n      },\n      \"affiliateLinks\": [\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"https://szuJj.vhierBUpOVQ8X,Wn9tNZuPnt47zqk68,v-et\",\n          \"price\": \"string\"\n        },\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://fFJeDIPiNhlfDYZtZqUvhUUzhQUWAtof.xtbySuHT,qgGn0B.,JP\",\n          \"price\": \"string\"\n        }\n      ],\n      \"storeName\": \"string\",\n      \"storeId\": \"string\",\n      \"createdAt\": \"1983-12-31T10:26:50.892Z\",\n      \"updatedAt\": \"1964-01-19T19:51:56.984Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chat.curie.app",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "read:products"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://chat.curie.app/api/oauth/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://chat.curie.app/api/oauth/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3335b0e9-341f-42e3-b877-f956cdfc3ec2",
+    "name": "Curie 3D Product Commerce Catalog Products API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Search and discover products across thousands of Shopify stores with interactive 3D models. Browse by category, brand, or keyword. Products with 3D models can be viewed using GLB and USDZ formats. Requires Curie Pro subscription for full access.\n\nContact Support:\n Name: Curie Vision\n Email: support@curie.co",
+      "type": "text/plain"
+    }
+  }
+}

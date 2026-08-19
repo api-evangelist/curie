@@ -1,0 +1,170 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Curie 3D Product Commerce Catalog Products API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://chat.curie.app/api/oauth/authorize",
+      "accessTokenUrl": "https://chat.curie.app/api/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Products",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search products by name, brand, or category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chat.curie.app/api/products",
+            "params": [
+              {
+                "name": "q",
+                "value": "wireless headphones",
+                "type": "query",
+                "description": "Search query to match against product name, brand, description, or SKU"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of products to return"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for pagination"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "Number of products per page"
+              },
+              {
+                "name": "brand",
+                "value": "Sony",
+                "type": "query",
+                "description": "Filter by brand name"
+              },
+              {
+                "name": "category",
+                "value": "Electronics",
+                "type": "query",
+                "description": "Filter by product category"
+              },
+              {
+                "name": "hasProductionGradeModel",
+                "value": "",
+                "type": "query",
+                "description": "When true, only return products that have high-quality 3D models available for viewing"
+              }
+            ]
+          },
+          "docs": "List and filter products from the catalog. Supports text search, brand filtering, pagination, and filtering by 3D model availability. Returns product metadata including images, prices, and 3D model URLs."
+        },
+        {
+          "info": {
+            "name": "Get detailed product info including 3D model URLs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chat.curie.app/api/products/:productId",
+            "params": [
+              {
+                "name": "productId",
+                "value": "",
+                "type": "path",
+                "description": "Unique product identifier (UUID)"
+              }
+            ]
+          },
+          "docs": "Retrieve full details for a single product by ID. Includes all metadata, images, 3D model URLs (GLB and USDZ), pricing, and vendor links."
+        },
+        {
+          "info": {
+            "name": "Full-text search with relevance scoring",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chat.curie.app/api/products/search",
+            "params": [
+              {
+                "name": "q",
+                "value": "wireless noise-canceling headphones",
+                "type": "query",
+                "description": "Search query. Supports natural language like 'ergonomic standing desk under $500'"
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return"
+              }
+            ]
+          },
+          "docs": "Perform a full-text search across all product fields with relevance-based ranking. More powerful than the basic /api/products query parameter. Use this for natural language product searches."
+        },
+        {
+          "info": {
+            "name": "Get products related to a specific product",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chat.curie.app/api/products/:productId/related",
+            "params": [
+              {
+                "name": "productId",
+                "value": "",
+                "type": "path",
+                "description": "Product ID to find related products for"
+              }
+            ]
+          },
+          "docs": "Find products similar or related to a given product. Uses brand, category, and attribute matching to suggest alternatives and complementary items."
+        },
+        {
+          "info": {
+            "name": "Get featured products with 3D models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chat.curie.app/api/products/featured"
+          },
+          "docs": "Retrieve a curated list of featured products that have high-quality 3D models and are popular or noteworthy."
+        },
+        {
+          "info": {
+            "name": "Get newest products added to the catalog",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://chat.curie.app/api/products/new-arrivals"
+          },
+          "docs": "Retrieve the most recently added products, sorted by creation date (newest first)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

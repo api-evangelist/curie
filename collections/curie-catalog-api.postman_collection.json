@@ -1,0 +1,283 @@
+{
+  "item": [
+    {
+      "id": "872609d9-547f-4576-8cac-131520dc2a9d",
+      "name": "Catalog",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6a7be852-4dce-4aac-afdc-d6f0e3678dd6",
+          "name": "Search the unified product catalog across all stores",
+          "request": {
+            "name": "Search the unified product catalog across all stores",
+            "description": {
+              "content": "Search products across all connected Shopify stores. Supports natural language queries, brand filtering, category filtering, and pagination. Returns products with images, prices, 3D model availability, and store information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "catalog",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "(Required) Search query. Supports natural language like 'ergonomic office chair' or 'vintage leather bag'"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10",
+                  "description": "Maximum number of results to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "brand",
+                  "value": "<string>",
+                  "description": "Filter by brand name"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "Filter by product category"
+                },
+                {
+                  "disabled": false,
+                  "key": "has3dModel",
+                  "value": "<boolean>",
+                  "description": "When true, only return products with interactive 3D models"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "read:products"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://chat.curie.app/api/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://chat.curie.app/api/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "906735c1-ac41-44f7-b5e4-f2920f17e5cb",
+              "name": "Search results from the unified catalog",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "catalog",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "wireless noise-canceling headphones"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "brand",
+                      "value": "Sony"
+                    },
+                    {
+                      "key": "category",
+                      "value": "Electronics"
+                    },
+                    {
+                      "key": "has3dModel",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"productName\": \"string\",\n      \"brand\": \"string\",\n      \"displayPrice\": \"string\",\n      \"productCategory\": \"string\",\n      \"gender\": \"string\",\n      \"sku\": \"string\",\n      \"genAiDescription\": \"string\",\n      \"imageUrl\": \"http://BPKMwlZDOlrOQiWvmWGkhTukxN.wqH.J4dBcTYpoaxo7ccSCHGuVMRFIhc5MMZfwcnhY\",\n      \"hasProductionGradeModel\": true,\n      \"reconstructionModelGlb\": \"http://rjlofvxgPFjtOBAukHwZXEEddPErgbDzH.afc1g5FRqvyzm3uIN4XAPOyNPFNeTt4n2tWGuGs90+e+o+D\",\n      \"reconstructionModelUsdz\": \"https://nPJuhaCKhVQNoRFtsWlRWfGOpvXjgy.avbeSI3Q1LfB9BwLXc0HJid++6zzrBWJbIEV.Bbp5Oz4Iq9fJW3nG8eXz5for6hEaTCnBziP-5wMROH88.v+\",\n      \"reconstructionUrl\": \"https://tlmIKaUyZxJlrfNzndNnxmLNxulu.iijVciwEzPN6mgU2-RMNxaaaJ8BIB2E9ak\",\n      \"reconstructionUrlUsdz\": \"https://NwLgzkADiFeIbnED.qybofZQ+OK,B8X7jQM2d4AP4p1SbkhekK+dMMPc37yx-g4QZdcBnNAwbD+UG\",\n      \"premierVendor\": {\n        \"shop_name\": \"string\",\n        \"link\": \"https://BbbZZwwVfc.uasg-H3Vkev\",\n        \"price\": \"string\"\n      },\n      \"affiliateLinks\": [\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://ReXOIsnYBjclXVfbP.mdprjRMdPDZskVBsp7lN1XX-fs3McoJtr9UaXqrx\",\n          \"price\": \"string\"\n        },\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://CBrvhvlBzmtWfyqrtrU.mpk+qq5XIknEVIkjMK93acSAbcgAtV3TO5wCRqIQkl,y4XwePSDbrlQmUIIwM2xIgc\",\n          \"price\": \"string\"\n        }\n      ],\n      \"storeName\": \"string\",\n      \"storeId\": \"string\",\n      \"createdAt\": \"2022-05-19T09:13:33.157Z\",\n      \"updatedAt\": \"1974-05-23T14:23:19.059Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"productName\": \"string\",\n      \"brand\": \"string\",\n      \"displayPrice\": \"string\",\n      \"productCategory\": \"string\",\n      \"gender\": \"string\",\n      \"sku\": \"string\",\n      \"genAiDescription\": \"string\",\n      \"imageUrl\": \"https://kyLgLtOIHfGxiTeBhenGA.ecyao8USbP,m-JM5iHPUUu-M5XFs6kU86pvL9hAyeZk67bpWKRQIkMirH\",\n      \"hasProductionGradeModel\": true,\n      \"reconstructionModelGlb\": \"http://HBmfjKzROzEIRSfCbXNqJlL.xzqfWIAKwwZR-cGiaTNva75peKFzm\",\n      \"reconstructionModelUsdz\": \"http://AWSKlgtDOhDWGmDAGrxFqXolnGcGeuI.ixHyBth00+aqoullbvJjTJ2FhbgH1lQqoZ+fqCc7bW1K7z\",\n      \"reconstructionUrl\": \"https://UJtmAHfHCZfmEhdElvWklVRvywu.fbMHEde+HM91z.aYTYiLaJb86ayMXuGLga\",\n      \"reconstructionUrlUsdz\": \"https://ARUCJZJubytma.ozQ,vwcxoBm5YOv4H7fUMQYnIPzcdvVbx\",\n      \"premierVendor\": {\n        \"shop_name\": \"string\",\n        \"link\": \"https://UPdCHgfivPmPOuOEWDvzkprcqUUbSjh.xhjaCt8T1ejeqcpTpppBL2PtM4Ly-VqYzrYduXHj8db1PRkNNL3\",\n        \"price\": \"string\"\n      },\n      \"affiliateLinks\": [\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"https://Tk.kvllsQ7yG3gE\",\n          \"price\": \"string\"\n        },\n        {\n          \"shop_name\": \"string\",\n          \"url\": \"http://nbRbgmDvXkuLhlRTXcAM.iqmjbWV5O+fIFXkw1b7ArLN3FJnPbwt1M6H4iSzJFiJl01.iTOltxDtC\",\n          \"price\": \"string\"\n        }\n      ],\n      \"storeName\": \"string\",\n      \"storeId\": \"string\",\n      \"createdAt\": \"2025-08-07T20:28:27.611Z\",\n      \"updatedAt\": \"1996-06-06T19:21:29.279Z\"\n    }\n  ],\n  \"total\": 2368,\n  \"page\": 7198,\n  \"limit\": 5690,\n  \"hasMore\": false,\n  \"query\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "17373e01-ffdb-4b21-b289-7d0a267f1ee7",
+              "name": "Authentication required (Curie Pro subscription needed)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "catalog",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "wireless noise-canceling headphones"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "brand",
+                      "value": "Sony"
+                    },
+                    {
+                      "key": "category",
+                      "value": "Electronics"
+                    },
+                    {
+                      "key": "has3dModel",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://chat.curie.app",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "read:products"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://chat.curie.app/api/oauth/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://chat.curie.app/api/oauth/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "04e47aae-5a04-4fcf-909b-966b6da988f7",
+    "name": "Curie 3D Product Commerce Catalog API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Search and discover products across thousands of Shopify stores with interactive 3D models. Browse by category, brand, or keyword. Products with 3D models can be viewed using GLB and USDZ formats. Requires Curie Pro subscription for full access.\n\nContact Support:\n Name: Curie Vision\n Email: support@curie.co",
+      "type": "text/plain"
+    }
+  }
+}
