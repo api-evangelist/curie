@@ -39,6 +39,16 @@ tags:
 - E-Commerce
 - Shopify
 - Artificial Intelligence
+- MCP
+- Agentic Commerce
+- Product Discovery
+- 3D
+tags_raw:
+- Company
+- Commerce
+- E-Commerce
+- Shopify
+- Artificial Intelligence
 - Model Context Protocol
 - Agentic Commerce
 - Product Discovery
@@ -67,6 +77,8 @@ apis:
   humanURL: https://chat.curie.app
   baseURL: https://chat.curie.app
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
