@@ -11,6 +11,18 @@ description: >-
   discovery and tool calls run on a free public tier with no auth; a Pro Bearer
   is required only for premium tools such as checkout. Backed by 500 Global.
 url: https://raw.githubusercontent.com/api-evangelist/curie/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
