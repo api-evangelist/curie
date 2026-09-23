@@ -1,8 +1,7 @@
 {
   "provider": "curie",
   "sources": [
-    "curie-catalog-api-openapi.yml",
-    "curie-products-api-openapi.yml"
+    "_original/curie-openapi.json"
   ],
   "outputs": [
     "curie-catalog-api-openapi.yml",
@@ -11,6 +10,22 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "curie-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "curie-openapi.json: tagged paths GET /api/catalog/search -> Catalog",
+    "curie-openapi.json: tagged paths GET /api/products -> Products",
+    "curie-openapi.json: tagged paths GET /api/products/{productId} -> Products",
+    "curie-openapi.json: tagged paths GET /api/products/search -> Products",
+    "curie-openapi.json: tagged paths GET /api/products/{productId}/related -> Products",
+    "curie-openapi.json: tagged paths GET /api/products/featured -> Products",
+    "curie-openapi.json: tagged paths GET /api/products/new-arrivals -> Products",
+    "curie-openapi.json: declared missing tag: Catalog",
+    "curie-openapi.json: declared missing tag: Products",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "curie-catalog-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "curie-products-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

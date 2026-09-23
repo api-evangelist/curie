@@ -1,0 +1,29 @@
+# Front Door AI Index — curie — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: curie
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: curie.co
+  final_host: curie.co
+  ownership: own
+  owner: curie
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 20
+  host_score: 20
+  density: 48.19
+  words: 415
+  tiers:
+    agentic: 3
+    core: 6
+    model: 11
+  ambiguous: 0
+  top_terms:
+    ChatGPT: 7
+    AI: 6
+    AI assistant: 3
+    Claude: 2
+    Gemini: 2

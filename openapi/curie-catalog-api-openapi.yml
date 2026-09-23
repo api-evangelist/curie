@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Curie 3D Product Commerce Catalog API
   description: Search and discover products across thousands of Shopify stores with interactive 3D models. Browse by category, brand, or keyword. Products with 3D models can be viewed using GLB and USDZ formats. Requires Curie Pro subscription for full access.
