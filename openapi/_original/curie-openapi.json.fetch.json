@@ -1,0 +1,12 @@
+{
+ "url": "https://chat.curie.app/api/openai/openapi.json",
+ "requested_url": "https://chat.curie.app/api/openai/openapi.json",
+ "status": 200,
+ "content_type": "application/json; charset=utf-8",
+ "bytes": 10364,
+ "sha256": "53e55a3272e1dff214e22daef2b5ea7c57ef41f56342047b896e51ba8f9c3dc1",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
