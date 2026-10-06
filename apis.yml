@@ -44,7 +44,7 @@ x-tier: enriched
 x-tier-reason: live-api-and-mcp
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-10-06'
 tags:
 - Company
 - Commerce
@@ -98,6 +98,8 @@ apis:
   - type: APIReference
     url: openapi/_original/curie-openapi.json
 common:
+- url: https://curie.co/blog/
+  type: Blog
 - type: Website
   url: https://curie.co
 - type: DeveloperPortal
