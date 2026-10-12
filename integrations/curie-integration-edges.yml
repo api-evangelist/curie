@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/curie/integrations
+- https://n8n.io/integrations/curie/
+- https://composio.dev/toolkits/curie
+- https://monid.ai/tools/curie
+checked:
+- https://composio.dev/toolkits/curie
+- https://monid.ai/tools/curie
+- https://n8n.io/integrations/curie/
+- https://zapier.com/apps/curie/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
