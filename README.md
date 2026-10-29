@@ -64,6 +64,117 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Curie is a company surfaced as a portfolio company of 500-global and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Curie (Curie Vision, Inc.) is the commerce layer for AI — it connects AI assistants like ChatGPT, Claude, and Gemini to real product catalogs from 5.6M+ Shopify stores via the Model Context Protocol (MCP). Results carry live prices, real inventory, affiliate purchase links, and interactive 3D digital twins (GLB/USDZ) that shoppers can rotate and view in AR. Curie publishes a public REST catalog API, a hosted MCP server exposing 30 commerce tools, and cross-protocol discovery profiles (MCP, UCP, A2A, OpenAI Apps SDK). Most discovery and tool calls run on a free public tier with no auth; a Pro Bearer is required only for premium tools such as checkout. Backed by 500 Global.
 
-Backed by: 500-global — https://curie.co
+**Areas:** Company · Commerce · E-Commerce · Shopify · Artificial Intelligence · MCP · Agentic Commerce · Product Discovery · 3D
+
+## Curie on APIs.io
+
+Everything profiled for Curie is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/curie/](https://apis.io/providers/curie/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Curie Catalog API](https://apis.io/apis/curie/curie-catalog-api/) — The Catalog API from Curie — 1 operation(s) for catalog.
+- [Curie Products API](https://apis.io/apis/curie/curie-products-api/) — The Products API from Curie — 6 operation(s) for products.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [Curie Commerce](https://apis.io/servers/curie/curie-commerce/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Curie 3D Product Commerce Catalog API](https://apis.io/collections/curie/open-curie-catalog-api/)
+- [Curie 3D Product Commerce Catalog Products API](https://apis.io/collections/curie/open-curie-products-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Curie Overlay](https://apis.io/overlays/curie/curie-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Curie Authentication](https://apis.io/security/curie/curie-authentication/)
+- [Curie Domain Security](https://apis.io/security/curie/curie-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Curie Scopes](https://apis.io/scopes/curie/curie-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://curie.co)
+- [Documentation](https://chat.curie.app/llms.txt)
+- [Pricing](https://chat.curie.app/pricing)
+- [Blog](https://curie.co/blog/)
+- [Terms of service](https://chat.curie.app/terms)
+- [Privacy policy](https://chat.curie.app/privacy)
+
+## API Evangelist rating
+
+**Kin Score 40.0** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 52.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 42.3 |
+| Access clarity | 31.6 |
+
+**Agent readiness 47.0** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | na |
+| MCP Server | verified |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | na |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | self |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 31.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/curie/](https://apis.io/providers/curie/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Curie: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/curie/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
